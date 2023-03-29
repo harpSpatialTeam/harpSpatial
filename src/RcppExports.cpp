@@ -94,9 +94,44 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// cpp_neighborhood_scores
+DataFrame cpp_neighborhood_scores(NumericMatrix fcfield, NumericMatrix obfield, NumericVector thresholds, NumericVector scales, String comparator, bool includeLow, bool includeHigh, String boundaryCondition);
+RcppExport SEXP _harpSpatial_cpp_neighborhood_scores(SEXP fcfieldSEXP, SEXP obfieldSEXP, SEXP thresholdsSEXP, SEXP scalesSEXP, SEXP comparatorSEXP, SEXP includeLowSEXP, SEXP includeHighSEXP, SEXP boundaryConditionSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type fcfield(fcfieldSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type obfield(obfieldSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type thresholds(thresholdsSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type scales(scalesSEXP);
+    Rcpp::traits::input_parameter< String >::type comparator(comparatorSEXP);
+    Rcpp::traits::input_parameter< bool >::type includeLow(includeLowSEXP);
+    Rcpp::traits::input_parameter< bool >::type includeHigh(includeHighSEXP);
+    Rcpp::traits::input_parameter< String >::type boundaryCondition(boundaryConditionSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_neighborhood_scores(fcfield, obfield, thresholds, scales, comparator, includeLow, includeHigh, boundaryCondition));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_ens_fss
+DataFrame cpp_ens_fss(List geolistFcst, NumericMatrix geofieldObs, NumericVector threshold, NumericVector scales, String comparator, bool includeLow, bool includeHigh);
+RcppExport SEXP _harpSpatial_cpp_ens_fss(SEXP geolistFcstSEXP, SEXP geofieldObsSEXP, SEXP thresholdSEXP, SEXP scalesSEXP, SEXP comparatorSEXP, SEXP includeLowSEXP, SEXP includeHighSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< List >::type geolistFcst(geolistFcstSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type geofieldObs(geofieldObsSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type threshold(thresholdSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type scales(scalesSEXP);
+    Rcpp::traits::input_parameter< String >::type comparator(comparatorSEXP);
+    Rcpp::traits::input_parameter< bool >::type includeLow(includeLowSEXP);
+    Rcpp::traits::input_parameter< bool >::type includeHigh(includeHighSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_ens_fss(geolistFcst, geofieldObs, threshold, scales, comparator, includeLow, includeHigh));
+    return rcpp_result_gen;
+END_RCPP
+}
 // harpSpatial_neighborhood_scores
-DataFrame harpSpatial_neighborhood_scores(NumericMatrix obfield, NumericMatrix fcfield, NumericVector thresholds, NumericVector scales);
-RcppExport SEXP _harpSpatial_harpSpatial_neighborhood_scores(SEXP obfieldSEXP, SEXP fcfieldSEXP, SEXP thresholdsSEXP, SEXP scalesSEXP) {
+DataFrame harpSpatial_neighborhood_scores(NumericMatrix obfield, NumericMatrix fcfield, NumericVector thresholds, NumericVector scales, String comparator, bool includeLow, bool includeHigh, String boundaryCondition);
+RcppExport SEXP _harpSpatial_harpSpatial_neighborhood_scores(SEXP obfieldSEXP, SEXP fcfieldSEXP, SEXP thresholdsSEXP, SEXP scalesSEXP, SEXP comparatorSEXP, SEXP includeLowSEXP, SEXP includeHighSEXP, SEXP boundaryConditionSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -104,7 +139,28 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< NumericMatrix >::type fcfield(fcfieldSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type thresholds(thresholdsSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type scales(scalesSEXP);
-    rcpp_result_gen = Rcpp::wrap(harpSpatial_neighborhood_scores(obfield, fcfield, thresholds, scales));
+    Rcpp::traits::input_parameter< String >::type comparator(comparatorSEXP);
+    Rcpp::traits::input_parameter< bool >::type includeLow(includeLowSEXP);
+    Rcpp::traits::input_parameter< bool >::type includeHigh(includeHighSEXP);
+    Rcpp::traits::input_parameter< String >::type boundaryCondition(boundaryConditionSEXP);
+    rcpp_result_gen = Rcpp::wrap(harpSpatial_neighborhood_scores(obfield, fcfield, thresholds, scales, comparator, includeLow, includeHigh, boundaryCondition));
+    return rcpp_result_gen;
+END_RCPP
+}
+// harpSpatial_ens_fss
+DataFrame harpSpatial_ens_fss(List geolistFcst, NumericMatrix geofieldObs, NumericVector threshold, NumericVector scales, String comparator, bool includeLow, bool includeHigh);
+RcppExport SEXP _harpSpatial_harpSpatial_ens_fss(SEXP geolistFcstSEXP, SEXP geofieldObsSEXP, SEXP thresholdSEXP, SEXP scalesSEXP, SEXP comparatorSEXP, SEXP includeLowSEXP, SEXP includeHighSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< List >::type geolistFcst(geolistFcstSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type geofieldObs(geofieldObsSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type threshold(thresholdSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type scales(scalesSEXP);
+    Rcpp::traits::input_parameter< String >::type comparator(comparatorSEXP);
+    Rcpp::traits::input_parameter< bool >::type includeLow(includeLowSEXP);
+    Rcpp::traits::input_parameter< bool >::type includeHigh(includeHighSEXP);
+    rcpp_result_gen = Rcpp::wrap(harpSpatial_ens_fss(geolistFcst, geofieldObs, threshold, scales, comparator, includeLow, includeHigh));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -117,7 +173,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_harpSpatial_window_mean_from_cumsum", (DL_FUNC) &_harpSpatial_window_mean_from_cumsum, 2},
     {"_harpSpatial_windowMean", (DL_FUNC) &_harpSpatial_windowMean, 2},
     {"_harpSpatial_fss_from_fractions", (DL_FUNC) &_harpSpatial_fss_from_fractions, 2},
-    {"_harpSpatial_harpSpatial_neighborhood_scores", (DL_FUNC) &_harpSpatial_harpSpatial_neighborhood_scores, 4},
+    {"_harpSpatial_cpp_neighborhood_scores", (DL_FUNC) &_harpSpatial_cpp_neighborhood_scores, 8},
+    {"_harpSpatial_cpp_ens_fss", (DL_FUNC) &_harpSpatial_cpp_ens_fss, 7},
+    {"_harpSpatial_harpSpatial_neighborhood_scores", (DL_FUNC) &_harpSpatial_harpSpatial_neighborhood_scores, 8},
+    {"_harpSpatial_harpSpatial_ens_fss", (DL_FUNC) &_harpSpatial_harpSpatial_ens_fss, 7},
     {NULL, NULL, 0}
 };
 

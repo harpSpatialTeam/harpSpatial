@@ -10,10 +10,12 @@ Authors@R: as.person(c(
 Description: Spatial verification code for HARP
 Maintainer: Alex Deckmyn <alex.deckmyn@meteo.be>
 Depends:
-  R (>= 3.4.0)
+    harpCore,
+    R (>= 3.4.0)
 Remotes:
   harphub/meteogrid,
-  harphub/harpIO
+  harphub/harpIO@develop,
+  harphub/harpCore
 License: Apache License (>= 2.0)
 Encoding: UTF-8
 Imports:
@@ -22,5 +24,5 @@ Imports:
     tibble,
     lubridate,
     readr
-LinkingTo: Rcpp
-RoxygenNote: 7.2.1
+LinkingTo: Rcpp, harpCore
+RoxygenNote: 7.2.3

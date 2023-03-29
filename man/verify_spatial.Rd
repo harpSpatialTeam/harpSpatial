@@ -17,14 +17,14 @@ verify_spatial(
   fc_file_path = harpSpatial_conf$fc_file_path,
   fc_file_template = harpSpatial_conf$fc_file_template,
   fc_file_format = harpSpatial_conf$fc_file_format,
-  fc_options = harpSpatial_conf$fc_options,
+  fc_file_options = harpSpatial_conf$fc_file_options,
   fc_domain = harpSpatial_conf$fc_domain,
   fc_interp_method = harpSpatial_conf$fc_interp_method,
   fc_accumulation = harpSpatial_conf$fc_accumulation,
   ob_file_path = harpSpatial_conf$ob_file_path,
   ob_file_template = harpSpatial_conf$ob_file_template,
   ob_file_format = harpSpatial_conf$ob_file_format,
-  ob_options = harpSpatial_conf$ob_options,
+  ob_file_options = harpSpatial_conf$ob_file_options,
   ob_domain = harpSpatial_conf$ob_domain,
   ob_interp_method = harpSpatial_conf$ob_interp_method,
   ob_accumulation = harpSpatial_conf$ob_accumulation,
@@ -34,7 +34,7 @@ verify_spatial(
   thresholds = harpSpatial_conf$thresholds,
   sqlite_path = harpSpatial_conf$sqlite_path,
   sqlite_file = harpSpatial_conf$sqlite_file,
-  return_data = TRUE
+  return_data = FALSE
 )
 
 verify_spatial(
@@ -50,14 +50,14 @@ verify_spatial(
   fc_file_path = harpSpatial_conf$fc_file_path,
   fc_file_template = harpSpatial_conf$fc_file_template,
   fc_file_format = harpSpatial_conf$fc_file_format,
-  fc_options = harpSpatial_conf$fc_options,
+  fc_file_options = harpSpatial_conf$fc_file_options,
   fc_domain = harpSpatial_conf$fc_domain,
   fc_interp_method = harpSpatial_conf$fc_interp_method,
   fc_accumulation = harpSpatial_conf$fc_accumulation,
   ob_file_path = harpSpatial_conf$ob_file_path,
   ob_file_template = harpSpatial_conf$ob_file_template,
   ob_file_format = harpSpatial_conf$ob_file_format,
-  ob_options = harpSpatial_conf$ob_options,
+  ob_file_options = harpSpatial_conf$ob_file_options,
   ob_domain = harpSpatial_conf$ob_domain,
   ob_interp_method = harpSpatial_conf$ob_interp_method,
   ob_accumulation = harpSpatial_conf$ob_accumulation,
@@ -67,7 +67,7 @@ verify_spatial(
   thresholds = harpSpatial_conf$thresholds,
   sqlite_path = harpSpatial_conf$sqlite_path,
   sqlite_file = harpSpatial_conf$sqlite_file,
-  return_data = TRUE
+  return_data = FALSE
 )
 }
 \arguments{
@@ -108,7 +108,7 @@ will always be file_path/template.}
 
 \item{fc_file_format}{The format of the files to read. Can be e.g. "fa" or "grib".}
 
-\item{fc_options}{A list with format-specific options for the reader function.}
+\item{fc_file_options}{A list with format-specific options for the reader function.}
 
 \item{fc_domain}{The forecast domain. If provided, the fc reading can be made faster
 by not extracting domain information (format option meta).}
@@ -137,7 +137,7 @@ will always be file_path/template.}
 
 \item{ob_file_format}{The format of the files to read. Can be e.g. "hdf5" or "grib".}
 
-\item{ob_options}{A list with format-specific options for the reader function.}
+\item{ob_file_options}{A list with format-specific options for the reader function.}
 
 \item{ob_domain}{The observation domain. If provided, the obs reading can be made faster
 by not extracting domain information (format option meta).}
@@ -164,6 +164,10 @@ this directory.}
 \item{sqlite_file}{Name of SQLite file.}
 
 \item{return_data}{If TRUE, the result is returned as a list of tables.}
+
+\item{fc_options}{A list with format-specific options for the reader function.}
+
+\item{ob_options}{A list with format-specific options for the reader function.}
 
 \item{...}{Not used at thispoint (more info to be added).}
 }

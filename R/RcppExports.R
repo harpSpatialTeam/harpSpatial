@@ -30,7 +30,19 @@ fss_from_fractions <- function(m1, m2) {
     .Call('_harpSpatial_fss_from_fractions', PACKAGE = 'harpSpatial', m1, m2)
 }
 
-harpSpatial_neighborhood_scores <- function(obfield, fcfield, thresholds, scales) {
-    .Call('_harpSpatial_harpSpatial_neighborhood_scores', PACKAGE = 'harpSpatial', obfield, fcfield, thresholds, scales)
+cpp_neighborhood_scores <- function(fcfield, obfield, thresholds, scales, comparator = "ge", includeLow = TRUE, includeHigh = TRUE, boundaryCondition = "zero_pad") {
+    .Call('_harpSpatial_cpp_neighborhood_scores', PACKAGE = 'harpSpatial', fcfield, obfield, thresholds, scales, comparator, includeLow, includeHigh, boundaryCondition)
+}
+
+cpp_ens_fss <- function(geolistFcst, geofieldObs, threshold, scales, comparator = "ge", includeLow = TRUE, includeHigh = TRUE) {
+    .Call('_harpSpatial_cpp_ens_fss', PACKAGE = 'harpSpatial', geolistFcst, geofieldObs, threshold, scales, comparator, includeLow, includeHigh)
+}
+
+harpSpatial_neighborhood_scores <- function(obfield, fcfield, thresholds, scales, comparator = "ge", includeLow = TRUE, includeHigh = TRUE, boundaryCondition = "zero_pad") {
+    .Call('_harpSpatial_harpSpatial_neighborhood_scores', PACKAGE = 'harpSpatial', obfield, fcfield, thresholds, scales, comparator, includeLow, includeHigh, boundaryCondition)
+}
+
+harpSpatial_ens_fss <- function(geolistFcst, geofieldObs, threshold, scales, comparator = "ge", includeLow = TRUE, includeHigh = TRUE) {
+    .Call('_harpSpatial_harpSpatial_ens_fss', PACKAGE = 'harpSpatial', geolistFcst, geofieldObs, threshold, scales, comparator, includeLow, includeHigh)
 }
 
