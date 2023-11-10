@@ -217,8 +217,8 @@ verify_spatial <- function(start_date,
       if (length(fcfile) == 1) {
         do.call(harpIO::read_grid,
                 c(list(file_name = fcfile, file_format = fc_file_format, 
-                  parameter = parameter, lead_time = lead_time),
-                  fc_file_options))
+                  parameter = parameter, lead_time = lead_time,
+		  file_format_opts = fc_file_options)))
       } else {
         lapply(fcfile, harpIO::read_grid, file_format = fc_file_format, 
                 parameter = parameter, lead_time = lead_time, members=members,
